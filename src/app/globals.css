@@ -2,25 +2,65 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1b17;
+
+  --brand-green: #0f5e3a;
+  --brand-green-dark: #0a4a2c;
+  --brand-green-light: #1f8f5a;
+  --brand-green-50: #eaf6ef;
+  --brand-yellow: #f5c518;
+  --brand-yellow-dark: #e0ad00;
+  --brand-ink: #0f1b17;
+  --brand-muted: #5b6b64;
+  --brand-surface: #f6faf7;
+  --brand-border: #e2ece6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand: var(--brand-green);
+  --color-brand-dark: var(--brand-green-dark);
+  --color-brand-light: var(--brand-green-light);
+  --color-brand-50: var(--brand-green-50);
+  --color-accent: var(--brand-yellow);
+  --color-accent-dark: var(--brand-yellow-dark);
+  --color-ink: var(--brand-ink);
+  --color-muted: var(--brand-muted);
+  --color-surface: var(--brand-surface);
+  --color-border-brand: var(--brand-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hide scrollbar utility for horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reusable wave divider background */
+.wave-bg {
+  background-image: radial-gradient(
+      1200px 300px at 90% 0%,
+      rgba(245, 197, 24, 0.12),
+      transparent 70%
+    ),
+    radial-gradient(
+      1200px 300px at 0% 100%,
+      rgba(15, 94, 58, 0.08),
+      transparent 70%
+    );
 }
