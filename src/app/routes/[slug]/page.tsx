@@ -16,6 +16,10 @@ export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
+// Dynamic slug is read synchronously in this page, so opt out of
+// instant-navigation validation (Next.js 16 Partial Prefetching).
+export const instant = false;
+
 export async function generateMetadata({
   params,
 }: {
